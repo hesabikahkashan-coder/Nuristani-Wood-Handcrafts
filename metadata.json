@@ -1,0 +1,6 @@
+{
+  "name": "Nuristani Wood Handcrafts",
+  "description": "A premium luxury handcrafted heritage woodcarving brand portal with interactive custom commissioning configurator and real-time AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

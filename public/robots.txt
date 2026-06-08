@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/login
+Disallow: /api
+Disallow: /api/
+
+Sitemap: https://ais-pre-xkpnjwuqe5hsiixak5qwqa-316403213147.europe-west2.run.app/sitemap.xml

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, Cambria, serif;
+  
+  --color-gold-light: #EED6A3;
+  --color-gold-brand: #C5A880;
+  --color-gold-dark: #8C6F41;
+  
+  --color-wood-walnut: #4E3629;
+  --color-wood-bark: #1E130C;
+}
+
+/* Base custom resets */
+@layer base {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0A0A0A;
+    color: #E2E8F0;
+  }
+}
+
+/* Elegant minimalist scrollbar config */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #3B2E24;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8C6F41;
+}
+
+/* Utility classes for smooth operations */
+.rtl-flip {
+  transform: scaleX(-1);
+}
+
+.cormorant-serif {
+  font-family: var(--font-serif);
+}
+
+.inter-sans {
+  font-family: var(--font-sans);
+}
+
