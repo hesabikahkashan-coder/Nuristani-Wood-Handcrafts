@@ -31,6 +31,7 @@ export default function Navbar({
     { id: 'custom', labelKey: 'navCustom' },
     { id: 'blog', labelKey: 'navBlog' },
     { id: 'contact', labelKey: 'navContact' },
+    { id: 'track', labelKey: 'navTrack' },
   ];
 
   const languages = [

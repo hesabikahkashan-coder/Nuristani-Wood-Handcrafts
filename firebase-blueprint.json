@@ -1,0 +1,243 @@
+{
+  "entities": {
+    "product": {
+      "title": "Product",
+      "description": "An exquisite hand-carved heritage furniture item or commission",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique productidentifier"
+        },
+        "title": {
+          "type": "object",
+          "description": "Multilingual titles (en, fa, ar)"
+        },
+        "description": {
+          "type": "object",
+          "description": "Multilingual descriptions (en, fa, ar)"
+        },
+        "story": {
+          "type": "object",
+          "description": "Multilingual behind-the-scene narratives (en, fa, ar)"
+        },
+        "category": {
+          "type": "string",
+          "description": "Category (heritage, signature, royal)"
+        },
+        "materials": {
+          "type": "object",
+          "description": "Multilingual material list (en, fa, ar)"
+        },
+        "dimensions": {
+          "type": "object",
+          "description": "Multilingual dimensions (en, fa, ar)"
+        },
+        "craftingTime": {
+          "type": "object",
+          "description": "Multilingual estimated time to carve (en, fa, ar)"
+        },
+        "image": {
+          "type": "string",
+          "description": "Image file URL or Base64 reference"
+        },
+        "featured": {
+          "type": "boolean",
+          "description": "Show on home landing bento grids"
+        }
+      },
+      "required": ["id", "title", "description", "category", "image"]
+    },
+    "blogPost": {
+      "title": "BlogPost",
+      "description": "Cultural or design chronicles of Nuristan woodcrafts",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique post ID"
+        },
+        "title": {
+          "type": "object",
+          "description": "Multilingual titles (en, fa, ar)"
+        },
+        "slug": {
+          "type": "string",
+          "description": "SEO clean URL slug"
+        },
+        "excerpt": {
+          "type": "object",
+          "description": "Multilingual excerpts (en, fa, ar)"
+        },
+        "content": {
+          "type": "object",
+          "description": "Multilingual full Markdown content (en, fa, ar)"
+        },
+        "image": {
+          "type": "string",
+          "description": "Post hero image URL"
+        },
+        "category": {
+          "type": "string",
+          "description": "Craftsmanship, History, Philosophy, and so on"
+        },
+        "date": {
+          "type": "string",
+          "description": "ISO publication date"
+        },
+        "author": {
+          "type": "object",
+          "description": "Multilingual author names (en, fa, ar)"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["published", "draft"]
+        }
+      },
+      "required": ["id", "title", "slug", "content", "status"]
+    },
+    "inquiry": {
+      "title": "Inquiry",
+      "description": "A high-end private client custom carving request",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "trackingId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["custom", "wholesale", "contact"]
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "budgetRange": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "number"
+        },
+        "imageRef": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "responded", "archived"]
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "type", "name", "email", "phone"]
+    },
+    "order": {
+      "title": "Order",
+      "description": "An authenticated or processed order containing verified payment hashes",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "customerName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "enum": ["hesabpay", "crypto", "westernunion"]
+        },
+        "paymentDetails": {
+          "type": "object"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending_payment", "paid", "processing", "shipped", "delivered", "rejected"]
+        },
+        "total": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "hesabpaySessionId": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "customerName", "email", "phone", "paymentMethod", "status"]
+    },
+    "settings": {
+      "title": "AtelierSettings",
+      "description": "Global settings for rates, features, payments, and contacts",
+      "type": "object",
+      "properties": {
+        "showPrices": {
+          "type": "boolean"
+        },
+        "heroHeadline": {
+          "type": "object"
+        },
+        "heroSubheadline": {
+          "type": "object"
+        },
+        "contact": {
+          "type": "object"
+        },
+        "payment": {
+          "type": "object"
+        }
+      },
+      "required": ["contact", "payment"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "product",
+      "description": "Hand-carved premium collection products"
+    },
+    "/blog/{postId}": {
+      "schema": "blogPost",
+      "description": "Historical and artisanal log posts"
+    },
+    "/inquiries/{inquiryId}": {
+      "schema": "inquiry",
+      "description": "Customer carving collection inquiry letters"
+    },
+    "/orders/{orderId}": {
+      "schema": "order",
+      "description": "Digital orders requiring confirmation hooks"
+    },
+    "/settings/global": {
+      "schema": "settings",
+      "description": "Global settings document"
+    }
+  }
+}

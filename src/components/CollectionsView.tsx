@@ -387,6 +387,25 @@ export default function CollectionsView({ products, currentLocale, showPrices }:
                         className="w-full bg-[#121212] border border-[#2A1E17] focus:border-[#C5A880] text-gray-300 p-2.5 rounded text-xs focus:outline-none h-16 min-h-[64px]"
                       />
 
+                      {/* Security Numerical Verification Puzzle */}
+                      {puzzle && (
+                        <div className="space-y-2 bg-[#0C0C0C]/80 p-4 border border-[#231A15] rounded-sm">
+                          <div className="flex justify-between items-center text-[10px]">
+                            <span className="uppercase tracking-widest text-[#C5A880] font-bold">defense spam verification</span>
+                            <button type="button" onClick={fetchPuzzle} className="text-[#C5A880] hover:underline cursor-pointer lowercase">refresh code</button>
+                          </div>
+                          <p className="text-gray-300 font-serif leading-tight">{puzzle.question}</p>
+                          <input
+                            type="number"
+                            value={puzzleAnswer}
+                            onChange={(e) => setPuzzleAnswer(e.target.value)}
+                            placeholder="Enter sum"
+                            className="w-full bg-black/60 border border-[#231710] focus:border-[#C5A880] p-2 rounded text-xs text-center font-mono font-bold tracking-widest focus:outline-none text-gray-200"
+                            required
+                          />
+                        </div>
+                      )}
+
                       <button
                         type="submit"
                         disabled={loading}

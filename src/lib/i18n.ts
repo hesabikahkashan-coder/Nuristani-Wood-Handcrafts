@@ -170,6 +170,61 @@ export const UI_TRANSLATIONS: Record<string, TranslatableText> = {
     en: 'Destination Country',
     fa: 'کشور مقصد ارسال محصول',
     ar: 'دولة التوصيل المطلوبة'
+  },
+  navTrack: {
+    en: 'Track Order',
+    fa: 'پیگیری سفارش',
+    ar: 'تتبع الطلبات'
+  },
+  trackTitle: {
+    en: 'Atelier Order & Payment Tracker',
+    fa: 'سامانه پیگیری سفارش و پرداخت آنلاین کارگاه',
+    ar: 'بوابة تتبع الطلبات والمدفوعات الفاخرة'
+  },
+  trackExplain: {
+    en: 'Enter your official Order ID (e.g. ORD-XXXXXX-XXX) below to monitor craft status, shipment routing, and complete integrated secure digital checking (HesabPay / Crypto / Western Union).',
+    fa: 'کد سفارش رسمی خود (مانند ORD-XXXXXX-XXX) را وارد نموده تا وضعیت حکاکی سنتی، رهگیری محموله پروازی یا واریز پرداخت دیجیتال و برات را مشاهده کنید.',
+    ar: 'أدخل رقم كود الطلب الخاص بك (مثل ORD-XXXXXX-XXX) لمراقبة مراحل النحت والتوزيع واستكمال الدفع الفوري الآمن.'
+  },
+  orderIdInput: {
+    en: 'Official Order Reference ID',
+    fa: 'کد رسمی مرجع سفارش',
+    ar: 'كود رمز الطلب الرسمي'
+  },
+  trackButton: {
+    en: 'Locate Record',
+    fa: 'رهگیری سفارش چوبین',
+    ar: 'ابحث عن سجل الطلب'
+  },
+  orderNotFound: {
+    en: 'No registered order found with the provided identifier code. Please check for spelling mistakes or consult WhatsApp support.',
+    fa: 'سفارشی با شناسه وارد شده یافت نشد. لطفاً املاء و کدهای عددی سفارش خود را بررسی کنید یا با مشاور ارشد در واتساپ گفتگو کنید.',
+    ar: 'لم نجد أي طلب مسجل بهذا الرمز. يرجى مراجعة رقم الكود أو التواصل معنا عبر خدمة عملاء واتساب.'
+  },
+  statusPendingPayment: {
+    en: 'Pending Payment',
+    fa: 'در انتظار پرداخت',
+    ar: 'في انتظار الدفع الرقمي'
+  },
+  statusPaid: {
+    en: 'Payment Verified & Captured',
+    fa: 'پرداخت تایید شد و ثبت گردید',
+    ar: 'تم تأكيد عملية الدفع بنجاح'
+  },
+  statusProcessing: {
+    en: 'Aesthetic Carving In Progress',
+    fa: 'استاد دستان مشغول حکاکی هندسی اثر',
+    ar: 'جاري العمل ونحت النقش الهندسي التراثي'
+  },
+  statusShipped: {
+    en: 'Shipped in Secure Wooden Vault',
+    fa: 'صادر شده و ارسالی در صندوق چوبی ایمن',
+    ar: 'تم الشحن في صندوق حماية خشبي مبطن'
+  },
+  statusDelivered: {
+    en: 'Delivered to Estate',
+    fa: 'تحویل داده شده به نشانی',
+    ar: 'تم التسليم بنجاح للعنوان'
   }
 };
 

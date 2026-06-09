@@ -16,6 +16,7 @@ import CustomOrderView from './components/CustomOrderView';
 import BlogView from './components/BlogView';
 import ContactView from './components/ContactView';
 import AdminPanel from './components/AdminPanel';
+import TrackOrderView from './components/TrackOrderView';
 
 import { Award, Loader2, Sparkles, AlertCircle } from 'lucide-react';
 
@@ -110,6 +111,7 @@ export default function App() {
     if (path.startsWith('/blog')) return 'blog';
     if (path.startsWith('/contact')) return 'contact';
     if (path.startsWith('/admin')) return 'admin';
+    if (path.startsWith('/track')) return 'track';
     return 'home';
   };
   const currentView = getActiveView();
@@ -125,6 +127,7 @@ export default function App() {
       case 'blog': navigate('/blog'); break;
       case 'contact': navigate('/contact'); break;
       case 'admin': navigate('/admin'); break;
+      case 'track': navigate('/track'); break;
       default: navigate('/'); break;
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -299,6 +302,7 @@ export default function App() {
           <Route path="/blog" element={<BlogView blogPosts={blogPosts} currentLocale={currentLocale} />} />
           <Route path="/blog/:slug" element={<BlogView blogPosts={blogPosts} currentLocale={currentLocale} />} />
           <Route path="/contact" element={<ContactView currentLocale={currentLocale} contactSettings={settings.contact} />} />
+          <Route path="/track" element={<TrackOrderView currentLocale={currentLocale} />} />
           <Route path="/admin" element={
             <AdminPanel
               products={products}
